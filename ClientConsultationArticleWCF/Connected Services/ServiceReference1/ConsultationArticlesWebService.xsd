@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webService/" targetNamespace="http://webService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="article" type="tns:article" />
+  <xs:element name="getAllArticles" type="tns:getAllArticles" />
+  <xs:element name="getAllArticlesResponse" type="tns:getAllArticlesResponse" />
+  <xs:element name="getArticles" type="tns:getArticles" />
+  <xs:element name="getArticlesResponse" type="tns:getArticlesResponse" />
+  <xs:element name="getLocalSearch" type="tns:getLocalSearch" />
+  <xs:element name="getLocalSearchResponse" type="tns:getLocalSearchResponse" />
+  <xs:element name="setArticles" type="tns:setArticles" />
+  <xs:element name="setArticlesResponse" type="tns:setArticlesResponse" />
+  <xs:complexType name="setArticles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="liste" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="article">
+    <xs:sequence>
+      <xs:element name="dislikes" type="xs:int" />
+      <xs:element name="likes" type="xs:int" />
+      <xs:element minOccurs="0" name="texte" type="xs:string" />
+      <xs:element minOccurs="0" name="titre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setArticlesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLocalSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="value" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="liste" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLocalSearchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArticles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArticlesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllArticles">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getAllArticlesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

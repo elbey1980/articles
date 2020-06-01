@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ConsultationArticlesWebService" targetNamespace="http://webService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://desktop-drkoccq:8080/ConsultationArticleSOAPService/ConsultationArticlesWebService?xsd=1" namespace="http://webService/" />
+    </xsd:schema>
+  </types>
+  <message name="setArticles">
+    <part name="parameters" element="tns:setArticles" />
+  </message>
+  <message name="setArticlesResponse">
+    <part name="parameters" element="tns:setArticlesResponse" />
+  </message>
+  <message name="getAllArticles">
+    <part name="parameters" element="tns:getAllArticles" />
+  </message>
+  <message name="getAllArticlesResponse">
+    <part name="parameters" element="tns:getAllArticlesResponse" />
+  </message>
+  <message name="getArticles">
+    <part name="parameters" element="tns:getArticles" />
+  </message>
+  <message name="getArticlesResponse">
+    <part name="parameters" element="tns:getArticlesResponse" />
+  </message>
+  <message name="getLocalSearch">
+    <part name="parameters" element="tns:getLocalSearch" />
+  </message>
+  <message name="getLocalSearchResponse">
+    <part name="parameters" element="tns:getLocalSearchResponse" />
+  </message>
+  <portType name="ConsultationArticlesWebService">
+    <operation name="setArticles">
+      <input wsam:Action="http://webService/ConsultationArticlesWebService/setArticlesRequest" message="tns:setArticles" />
+      <output wsam:Action="http://webService/ConsultationArticlesWebService/setArticlesResponse" message="tns:setArticlesResponse" />
+    </operation>
+    <operation name="getAllArticles">
+      <input wsam:Action="http://webService/ConsultationArticlesWebService/getAllArticlesRequest" message="tns:getAllArticles" />
+      <output wsam:Action="http://webService/ConsultationArticlesWebService/getAllArticlesResponse" message="tns:getAllArticlesResponse" />
+    </operation>
+    <operation name="getArticles">
+      <input wsam:Action="http://webService/ConsultationArticlesWebService/getArticlesRequest" message="tns:getArticles" />
+      <output wsam:Action="http://webService/ConsultationArticlesWebService/getArticlesResponse" message="tns:getArticlesResponse" />
+    </operation>
+    <operation name="getLocalSearch">
+      <input wsam:Action="http://webService/ConsultationArticlesWebService/getLocalSearchRequest" message="tns:getLocalSearch" />
+      <output wsam:Action="http://webService/ConsultationArticlesWebService/getLocalSearchResponse" message="tns:getLocalSearchResponse" />
+    </operation>
+  </portType>
+  <binding name="ConsultationArticlesWebServicePortBinding" type="tns:ConsultationArticlesWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="setArticles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllArticles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getLocalSearch">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ConsultationArticlesWebService">
+    <port name="ConsultationArticlesWebServicePort" binding="tns:ConsultationArticlesWebServicePortBinding">
+      <soap:address location="http://desktop-drkoccq:8080/ConsultationArticleSOAPService/ConsultationArticlesWebService" />
+    </port>
+  </service>
+</definitions>
